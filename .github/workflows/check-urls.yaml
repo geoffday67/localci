@@ -7,9 +7,11 @@ jobs:
 
     steps:
       - name: Checkout the code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v4
         with:
-          repository: geoffday67/localci
+          fetch-depth: 0
+          sparse-checkout: |
+            gradle
 
       - name: Hello world action step
         id: hello
