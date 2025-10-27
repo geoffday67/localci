@@ -6,6 +6,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout the code
+        uses: actions/checkout@v5
+        with:
+          repository: geoffday67/localci
+
       - name: Hello world action step
         id: hello
         uses: ./.github/actions/check-urls
