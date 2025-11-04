@@ -1,24 +1,22 @@
 name: Check URLs
 on: workflow_dispatch
 jobs:
-  hello_world_job:
-    name: A job to say hello
+  check_urls:
+    name: Check URLs are valid
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout the code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          sparse-checkout: |
-            gradle
+        uses: actions/checkout@v5
 
-      - name: Hello world action step
-        id: hello
-        uses: ./.github/actions/check-urls
-        with:
-          who-to-greet: Geoff
+      - name: List files
+        run: ls -al
 
-      # Use the output from the `hello` step
-      - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"
+#      - name: Hello world action step
+#        id: hello
+#        uses: ./.github/actions/check-urls
+#        with:
+#          who-to-greet: Geoff
+#
+#      - name: Get the output time
+#        run: echo "The time was ${{ steps.hello.outputs.time }}"

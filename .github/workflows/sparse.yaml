@@ -5,7 +5,12 @@ jobs:
     name: Sparse checkout
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout the code
-        uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v5
         with:
-          sparse-checkout: .
+          sparse-checkout: |
+            build.gradle.kts
+          sparse-checkout-cone-mode: false
+
+      - name: List files
+        run: ls -al
