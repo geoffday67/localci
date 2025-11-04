@@ -6,10 +6,10 @@ jobs:
     steps:
       - name: Checkout the code
         uses: actions/checkout@v5
-        with:
-          sparse-checkout: |
-            README.md
-          sparse-checkout-cone-mode: false
+#        with:
+#          sparse-checkout: |
+#            README.md
+#          sparse-checkout-cone-mode: false
 
       - name: Say Hello
         run: echo "Hello, World!"
